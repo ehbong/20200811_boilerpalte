@@ -5,7 +5,7 @@ const LandingPage = () => {
 
     useEffect(()=> {
         axios.get('/api/hello') // 임의로 서버 호출
-            .then(response => console.log(response.data));
+            .then(response => console.log(response));
     }, [])
 
     return (
