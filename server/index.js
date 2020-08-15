@@ -3,16 +3,15 @@ const app = express();
 const port = 5050
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const { User } = require('./server/models/User');
-const { auth } = require('./server/middleware/auth');
+const { User } = require('./models/User');
+const { auth } = require('./middleware/auth');
 
-const config = require('./server/config/key');
+const config = require('./config/key');
 //application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended:true}));
 
 //application/json
 app.use(bodyParser.json());
-
 app.use(cookieParser());
 
 const mongoose = require('mongoose'); // mongoose 불러오기 
@@ -24,6 +23,9 @@ mongoose.connect(config.mongoURI,{
 
 app.get('/', (req, res)=> res.send('Hello World!~안녕하세요 ~ '));
 
+app.get('/api/hello', (req, res)=> {
+    res.send("안녕하세요~");
+})
 
 app.post('/api/users/register', (req, res)=> {
     // 회원 가입 할때 필요한 정보들을 client에서 가져오면
@@ -88,7 +90,7 @@ app.get('/api/users/logout', auth, (req, res)=>{
             succes: true
         });
     });
-});z
+});
 
 
 app.listen(port, ()=> console.log(`Example app listening on port ${port}!`));

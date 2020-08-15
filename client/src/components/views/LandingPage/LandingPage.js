@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 
 const LandingPage = () => {
+
+    useEffect(()=> {
+        axios.get('/api/hello') // 임의로 서버 호출
+            .then(response => console.log(response.data));
+    }, [])
+
     return (
         <div>
             LandingPage;
