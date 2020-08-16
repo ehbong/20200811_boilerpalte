@@ -42,9 +42,10 @@ app.post('/api/users/register', (req, res)=> {
 });
 
 app.post('/api/users/login', (req, res)=>{
-
+    console.log("로그인 요청");
     // 요청된 이메일이 DB에 있는지 찾는다.
     User.findOne({email: req.body.email}, (err, user)=>{
+        console.log("유저 검색");
         if(!user){
             return res.json({
                 loginSuccess: false,
