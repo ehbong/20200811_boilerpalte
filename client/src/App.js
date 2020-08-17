@@ -31,7 +31,7 @@ function App() {
         <Switch> {/* exact 옵션은 정확히 같은 매핑을 호출 해줌 */}
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/RegisterPage" component={RegisterPage} />
+          <Route exact path="/register" component={RegisterPage} />
         </Switch>
       </div>
     </Router>
