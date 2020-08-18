@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { logoutUser } from '../../../_actions/user_action';
+// import { withRouter } from 'react-router-dom';
 
 const LandingPage = (props) => {
 
