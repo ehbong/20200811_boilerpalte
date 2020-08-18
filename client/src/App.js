@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import LandingPage from './components/views/LandingPage/LandingPage';
@@ -18,7 +16,8 @@ import Auth from "./hoc/auth";
 function App() {
   return (
     <Router>
-      <div>
+      <NavBar />
+      <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
 
         {/*
           A <Switch> looks through all its children <Route>
@@ -34,6 +33,7 @@ function App() {
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
         </Switch>
       </div>
+      <Footer />
     </Router>
   );
 }

@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
-import Axios from 'axios';
 import { useDispatch } from "react-redux";
 import { auth } from '../_actions/user_action';
-import { withRouter } from "react-router-dom";
 
 export default function (SpecificComponent, option, adminRout = null){
 
@@ -26,7 +24,7 @@ export default function (SpecificComponent, option, adminRout = null){
                         if(adminRout && !res.payload.isAdmin){
                             props.history.push("/");
                         }else{
-                            if(option == false){
+                            if(option === false){
                                 props.history.push("/");
                             }
                         }
